@@ -18,5 +18,5 @@ jobs:
       with:
         server: mahyudin.cloud
         username: 4206038
-        password: ${{ secrets.FTP_PASSWORD }}
+        password: 8fHRr@2x1cC_24pE
         remote-dir: /home/www
