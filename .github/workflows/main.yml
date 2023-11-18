@@ -16,7 +16,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: mahyudin.cloud
+        server: f30-preview.awardspace.net
         username: 4206038
         password: ${{ secrets.FTP_PASSWORD }}
         remote-dir: /home/www
