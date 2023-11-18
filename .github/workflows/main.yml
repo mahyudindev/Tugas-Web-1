@@ -16,5 +16,5 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
         protocol: ftp
-        server-dir: /home/www/mahyudin.cloud
+        server-dir: /home/www/mahyudin.cloud/
         security: loose
