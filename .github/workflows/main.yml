@@ -10,14 +10,17 @@ jobs:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
+    - name: 🚚 Dapatkan kode terbaru
       uses: actions/checkout@v3
     
-    - name: 📂 Create directories on server
+    - name: 🛠 Pasang lftp
+      run: sudo apt-get install -y lftp
+    
+    - name: 📂 Buat direktori di server
       run: |
         lftp -u 4206038,8fHRr@2x1cC_24pE -e "mkdir -p /home/www/css; mkdir -p /home/www/img; mkdir -p /home/www/img/menu; mkdir -p /home/www/img/products; mkdir -p /home/www/js; exit" mahyudin.cloud
     
-    - name: 📂 Sync files
+    - name: 📂 Sinkronkan file
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: mahyudin.cloud
