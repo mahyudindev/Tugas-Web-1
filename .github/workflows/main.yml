@@ -18,7 +18,7 @@ jobs:
     
     - name: 📂 Buat direktori di server
       run: |
-        lftp -u 4206038,8fHRr@2x1cC_24pE -e "mkdir -p /home/www/css; mkdir -p /home/www/img; mkdir -p /home/www/img/menu; mkdir -p /home/www/img/products; mkdir -p /home/www/js; exit" mahyudin.cloud
+        lftp --no-ssl-verify -u 4206038,8fHRr@2x1cC_24pE -e "mkdir -p /home/www/css; mkdir -p /home/www/img; mkdir -p /home/www/img/menu; mkdir -p /home/www/img/products; mkdir -p /home/www/js; exit" mahyudin.cloud
     
     - name: 📂 Sinkronkan file
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
