@@ -1,5 +1,10 @@
-on: push
+on:
+  push:
+    branches:
+      - main
+
 name: 🚀 Deploy website on push
+
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -12,5 +17,6 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: mahyudin.cloud
-        username: 4206038_4206038
+        username: 4206038
         password: ${{ secrets.FTP_PASSWORD }}
+        remote-dir: /home/www
