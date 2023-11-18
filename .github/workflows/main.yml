@@ -14,5 +14,5 @@ jobs:
         server: mahyudin.cloud
         username: 4206038_1
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /home/www/mahyudin.cloud/kopi kenagan/
+        server-dir: /home/www/mahyudin.cloud/
       
