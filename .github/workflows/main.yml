@@ -14,7 +14,5 @@ jobs:
         server: mahyudin.cloud
         username: 4206038_1
         password: ${{ secrets.FTP_PASSWORD }}
-        port: 21
-        protocol: ftp
-        server-dir: /home/www/mahyudin.cloud/
-        security: loose
+        server-dir: /home/www/mahyudin.cloud/kopi kenagan
+      
