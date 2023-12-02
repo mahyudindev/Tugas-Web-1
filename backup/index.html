@@ -1,0 +1,92 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Web1 Semester 5</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>Tugas Web1 Semester 5</nav>
+
+    <div class="dashboard-container" id="dashboard-container">
+        <!-- Existing cards will be populated here -->
+    </div>
+
+    <button onclick="addNewCard()">Tambah Card</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Load existing cards from server
+            fetch('loadcards.php')
+                .then(response => response.json())
+                .then(data => {
+                    const dashboardContainer = document.getElementById('dashboard-container');
+                    data.forEach(card => {
+                        const newCard = createCardElement(card.name, card.path);
+                        dashboardContainer.appendChild(newCard);
+                    });
+                });
+        });
+
+        function createCardElement(name, path) {
+            const newCard = document.createElement('div');
+            newCard.className = 'dashboard-card';
+            newCard.setAttribute('onclick', `goTo('${path}')`);
+
+            newCard.innerHTML = `
+                <a href="${path}">
+                    <div class="dashboard-card-content">${name}</div>
+                </a>
+            `;
+
+            return newCard;
+        }
+
+        function goTo(path) {
+            window.location.href = path;
+        }
+
+        async function isCardNameUnique(name) {
+            const response = await fetch('loadcards.php');
+            const data = await response.json();
+            return !data.some(card => card.name === name);
+        }
+
+        async function addNewCard() {
+            const cardName = prompt("Masukkan nama card:");
+            const cardPath = prompt("Masukkan path card (contoh: /tugas4/index.html):");
+
+            if (cardName && cardPath) {
+                const isUnique = await isCardNameUnique(cardName);
+
+                if (isUnique) {
+                    // Create a new card element
+                    const newCard = createCardElement(cardName, cardPath);
+
+                    // Append the new card to the dashboard container
+                    document.getElementById('dashboard-container').appendChild(newCard);
+
+                    // Save the new card to the server
+                    fetch('addcard.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ name: cardName, path: cardPath }),
+                    })
+                    .then(response => response.json())
+                    .then(data => console.log('Card berhasil ditambahkan:', data))
+                    .catch(error => console.error('Error:', error));
+                } else {
+                    alert('Nama card sudah ada. Silakan pilih nama card lain.');
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

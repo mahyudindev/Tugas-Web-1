@@ -1,0 +1,86 @@
+/* Tambahkan pada file style.css atau sesuaikan pada file CSS Anda */
+
+body {
+    background-color: #EEF5FF;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #9EB8D9;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Untuk membuat profil di pojok kiri */
+    align-items: center;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff; /* Sesuaikan dengan warna latar belakang navbar */
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.profile-name {
+    font-weight: bold;
+}
+
+.profile-dosen {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+
+.hd {
+    font-weight: bold;  
+    text-align: center;
+    justify-content: center; 
+}
+.dashboard-container {
+    display: flex;
+    justify-content: center; /* Mengubah ke tengah */
+    align-items: center; /* Mengubah ke tengah */
+    flex-wrap: wrap; /* Menangani ukuran layar kecil */
+    margin: 20px;
+}
+
+.dashboard-card {
+    width: 22vw;
+    height: 22vw;
+    background-color: #9EB8D9;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 15px; /* Sudut yang terbulat */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-card:hover {
+    background-color: #607799;
+}
+
+.dashboard-card a {
+    text-decoration: none;
+    color: lightgrey;
+}
+
+.dashboard-card-content {
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px; 
+}
