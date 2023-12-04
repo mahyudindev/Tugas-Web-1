@@ -1,133 +1,158 @@
-/* Tambahkan pada file style.css atau sesuaikan pada file CSS Anda */
+/* Resetting some default styles */
+body, h1, h2, h3, p, a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* Universal styling */
 body {
-    background-color: #EEF5FF;
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
+  background-color: #EEF5FF;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 nav {
-    background-color: #9EB8D9;
-    text-align: center;
-    padding: 15px 0;
-    font-weight: bold;
-    color: white;
-    display: flex;
-    justify-content: space-between; /* Untuk membuat profil di pojok kiri */
-    align-items: center;
+  background-color: #9EB8D9;
+  text-align: center;
+  padding: 15px 0;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: space-between; /* Untuk membuat profil di pojok kiri */
+  align-items: center;
 }
 
 .profile-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .profile-circle {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #fff; /* Sesuaikan dengan warna latar belakang navbar */
-    margin-right: 10px;
-    margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff; /* Sesuaikan dengan warna latar belakang navbar */
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .profile-name {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .profile-dosen {
-    font-weight: bold;
-    margin-right: 10px;
+  font-weight: bold;
+  margin-right: 10px;
 }
-
 
 .hd {
-    font-weight: bold;  
-    text-align: center;
-    justify-content: center; 
+  font-weight: bold;  
+  text-align: center;
+  justify-content: center; 
 }
+
 .dashboard-container {
-    display: flex;
-    justify-content: center; /* Mengubah ke tengah */
-    align-items: center; /* Mengubah ke tengah */
-    flex-wrap: wrap; /* Menangani ukuran layar kecil */
-    margin: 20px;
+  display: flex;
+  justify-content: center; /* Mengubah ke tengah */
+  align-items: center; /* Mengubah ke tengah */
+  flex-wrap: wrap; /* Menangani ukuran layar kecil */
+  margin: 20px;
 }
 
 .dashboard-card {
-    width: 22vw;
-    height: 22vw;
-    background-color: #9EB8D9;
-    margin: 10px;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 15px; /* Sudut yang terbulat */
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  width: 22vw;
+  height: 22vw;
+  background-color: #9EB8D9;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 15px; /* Sudut yang terbulat */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .dashboard-card:hover {
-    background-color: #607799;
+  background-color: #607799;
 }
 
 .dashboard-card a {
-    text-decoration: none;
-    color: lightgrey;
+  text-decoration: none;
+  color: lightgrey;
 }
 
 .dashboard-card-content {
-    text-align: center;
-    font-weight: bold;
-    font-size: 40px; 
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px; 
 }
 
 /* Footer */
 footer {
-    background-color : #9EB8D9;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 3rem;
+  background-color: #9EB8D9;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+}
+
+footer .socials {
+  padding: 1rem 0;
+}
+
+footer .socials a {
+  color: white;
+  margin: 1rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+  color: var(--bg);
+}
+
+footer .links {
+  margin-bottom: 1.4rem;
+}
+
+footer .links a {
+  color: white;
+  padding: 0.7rem 1rem;
+}
+
+footer .credit {
+  font-size: 0.8rem;
+}
+
+footer .credit a {
+  color: var(--bg);
+  font-weight: 700;
+}
+
+/* Media query untuk layar berukuran kecil (misalnya, ponsel) */
+@media only screen and (max-width: 600px) {
+  nav {
+      flex-direction: column;
+      text-align: center;
   }
-  
-  footer .socials {
-    padding: 1rem 0;
+
+  .profile-container {
+      margin-bottom: 1rem;
   }
-  
-  footer .socials a {
-    color: #fff;
-    margin: 1rem;
+
+  .dashboard-container {
+      margin: 10px; /* Sesuaikan margin sesuai kebutuhan */
   }
-  
-  footer .socials a:hover,
-  footer .links a:hover {
-    color: var(--bg);
+
+  .dashboard-card {
+      width: 100%;
+      height: auto;
+      margin: 10px 0; /* Sesuaikan margin sesuai kebutuhan */
   }
-  
-  footer .links {
-    margin-bottom: 1.4rem;
+
+  .dashboard-card-content {
+      font-size: 12px; /* Sesuaikan ukuran teks sesuai kebutuhan */
   }
-  
-  footer .links a {
-    color: #fff;
-    padding: 0.7rem 1rem;
-  }
-  
-  footer .credit {
-    font-size: 0.8rem;
-  }
-  
-  footer .credit a {
-    color: var(--bg);
-    font-weight: 700;
-  }
-  
-footer {
-   
-    text-align: center;
-    padding: 1rem 0 3rem;
-    margin-top: 3rem;
 }
